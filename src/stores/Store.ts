@@ -9,6 +9,6 @@ export class Store {
   }
 
   @observable example = {
-    colour: "red",
+    testMessage: "from Store",
   }
 }

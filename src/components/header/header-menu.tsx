@@ -21,6 +21,7 @@ const Title = styled.h2`
   text-align: center;
 	color: lightgrey;
 	display:inline;
+	margin-right: 1rem;
 `;
 
 const Container = styled.div`

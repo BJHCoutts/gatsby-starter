@@ -6,6 +6,6 @@ export class UIStore {
 
   @observable
   example = {
-    colour: "blue",
+    testMessage: "from UIStore",
   }
 }
