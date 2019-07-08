@@ -1,21 +1,16 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import styled from "styled-components"
 
-import {HeaderMenu} from "./header-menu"
-import { isNullOrUndefined } from "util";
+import { HeaderMenu } from "./header-menu"
 
 type Header = {
   siteTitle: string
 }
 
-const Header = ({ siteTitle }: Header) => (
-  <header
-    style={{
-      background: `grey`,
-      marginBottom: `1.45rem`,
-    }}
-  >
+export const Header = ({ siteTitle }: Header) => (
+  <HeaderTag>
     <div
       style={{
         margin: `0 auto`,
@@ -23,21 +18,25 @@ const Header = ({ siteTitle }: Header) => (
         padding: `1.45rem 1.0875rem`,
       }}
     >
-      <h1 style={{ margin: 0, display:'inline' }}>
+      <h1 style={{ margin: 0, display: "inline" }}>
         <Link
           to="/"
           style={{
             color: `white`,
-            textDecoration: `none`,
           }}
         >
           {siteTitle}
         </Link>
       </h1>
-    <HeaderMenu menuItems={["item1", "item2", "item3"]as string[]}/>
+      <HeaderMenu menuItems={["item1", "item2", "item3"] as string[]} />
     </div>
-  </header>
+  </HeaderTag>
 )
+
+const HeaderTag = styled.header`
+  background: grey;
+  marginbottom: 1.45rem;
+`
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
@@ -46,5 +45,3 @@ Header.propTypes = {
 Header.defaultProps = {
   siteTitle: `Template Header`,
 }
-
-export default Header
