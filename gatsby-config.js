@@ -5,15 +5,15 @@ module.exports = {
     author: `Brian Coutts`,
   },
   plugins: [
-    `gatsby-image`,  
+    `gatsby-image`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-typescript`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
         path: `${__dirname}/src/images`,
+        name: "images",
       },
     },
     `gatsby-transformer-sharp`,

@@ -1,15 +1,17 @@
 import React from "react"
 
 import { inject, observer } from "mobx-react"
-import Img from "gatsby-image"
-import { Link, graphql } from "gatsby"
+import { Link } from "gatsby"
 import styled from "styled-components"
+
+import { Astronaut } from "../components/images/astronaut"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 interface Props {
   store?: any
+  data: any
 }
 
 @inject("store")
@@ -20,6 +22,7 @@ export default class IndexPage extends React.Component<Props> {
     return (
       <Layout>
         <SEO title="Home" />
+        <Astronaut />
         <div>{store.example.testMessage}</div>
         <div>{store.ui.example.testMessage}</div>
         <Title>Template Start</Title>
