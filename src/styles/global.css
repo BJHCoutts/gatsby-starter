@@ -9,3 +9,9 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+p {
+  font: 0.9rem/1.25rem Arial;
+  margin-bottom: 0.85rem;
+  color: darkslategrey;
+}

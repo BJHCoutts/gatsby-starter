@@ -4,47 +4,59 @@ import styled from "styled-components"
 
 import { HeaderMenu } from "./header-menu"
 
-import genericLogo from "../../images/generic-logo.svg"
+import genericLogoWhite from "../../images/generic-logo-white.svg"
 
 type Header = {
   siteTitle: string
 }
 
-export const Header = ({ siteTitle }: Header) => (
-  <HeaderContainer>
-    <HeaderContent>
-      <Logo>
-        <img src={genericLogo} style={{ height: "100%", width: "100%" }} />
-      </Logo>
-      <span>
-        <Title>
-          <Link to="/">{siteTitle}</Link>
-        </Title>
-        <HeaderMenu menuItems={["item1", "item2", "item3"] as string[]} />
-      </span>
-    </HeaderContent>
-  </HeaderContainer>
-)
+export const Header = ({ siteTitle }: Header) => {
+  const HeaderContainer = styled.header`
+    background: grey;
+    display: flex;
+    flex-flow: row nowrap;
+  `
 
-const HeaderContainer = styled.header`
-  background: grey;
-  margin-bottom: 1.45rem;
-`
+  const HeaderContent = styled.div`
+    height: 7.25rem;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 960px;
+    padding: 1.45rem 1.0875rem;
+  `
 
-const HeaderContent = styled.div`
-  margin: 0 auto;
-  max-width: 960px;
-  padding: 1.45rem 1.0875rem;
-`
+  const TextContainer = styled.div`
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    height: 100%;
+  `
 
-const Logo = styled.div`
-  background: white;
-  height: 50px;
-  width: 50px;
-`
+  const Title = styled.h1`
+    display: inline;
+    color: white;
+    vertical-align: text-top;
+  `
 
-const Title = styled.h1`
-  margin: 0;
-  display: inline;
-  color: white;
-`
+  return (
+    <HeaderContainer>
+      <HeaderContent>
+        <img
+          src={genericLogoWhite}
+          style={{
+            height: "100%",
+            width: "auto",
+            marginRight: "3rem",
+            float: "left",
+          }}
+        />
+        <TextContainer>
+          <Title>
+            <Link to="/">{siteTitle}</Link>
+          </Title>
+          <HeaderMenu menuItems={["item1", "item2", "item3"] as string[]} />
+        </TextContainer>
+      </HeaderContent>
+    </HeaderContainer>
+  )
+}
