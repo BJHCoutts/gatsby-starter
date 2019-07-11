@@ -13,11 +13,11 @@ import styled from "styled-components"
 import { Footer } from "./footer"
 import { Header } from "./header/header"
 
-type Layout = {
+interface Props {
   children: JSX.Element[]
 }
 
-export const Layout = ({ children }: Layout) => {
+export const Layout = ({ children }: Props) => {
   const Main = styled.div`
     margin: 0 auto;
     maxwidth: 960;

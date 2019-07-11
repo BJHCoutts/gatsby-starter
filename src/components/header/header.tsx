@@ -6,11 +6,11 @@ import { HeaderMenu } from "./header-menu"
 
 import genericLogoWhite from "../../images/generic-logo-white.svg"
 
-type Header = {
+interface Props {
   siteTitle: string
 }
 
-export const Header = ({ siteTitle }: Header) => {
+export const Header = ({ siteTitle }: Props) => {
   const HeaderContainer = styled.header`
     background: grey;
     display: flex;

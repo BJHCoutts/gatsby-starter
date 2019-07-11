@@ -1,10 +1,10 @@
 import * as React from "react"
 import styled from "styled-components"
 
-type props = {
+interface Props {
   menuItems: string[]
 }
-export const HeaderMenu = (props: props) => {
+export const HeaderMenu = (props: Props) => {
   return (
     <Container>
       {props.menuItems.map((menuItem: string) => {

@@ -11,7 +11,7 @@ import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import { type } from "os"
 
-type SEO = {
+interface Props {
   description: string
   lang: string
   meta:
@@ -24,7 +24,7 @@ type SEO = {
   title: string
 }
 
-function SEO({ description, lang, meta, title }: SEO) {
+function SEO({ description, lang, meta, title }: Props) {
   const { site } = useStaticQuery(
     graphql`
       query {
