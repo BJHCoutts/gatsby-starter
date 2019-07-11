@@ -1,4 +1,4 @@
-import React, { ReactChild, ReactChildren } from "react"
+import * as React from "react"
 
 import styled from "styled-components"
 
@@ -11,7 +11,7 @@ export const Card = (props: Props) => {
   const Container = styled.div`
     border: solid 2px lightgrey;
     border-radius: 6px;
-    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.075);
+    box-shadow: var(--shadow);
     width: ${props.width};
     overflow: hidden;
   `

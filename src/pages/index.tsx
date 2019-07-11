@@ -1,10 +1,13 @@
-import React from "react"
+import * as React from "react"
 
 import { inject, observer } from "mobx-react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 
 import { Astronaut } from "../components/images/astronaut"
+
+import { ButtonConfirm } from "../components/button-confirm"
+import { ButtonCancel } from "../components/button-cancel"
 
 import { Card } from "../components/card"
 import { Layout } from "../components/layout"
@@ -24,12 +27,10 @@ export default class IndexPage extends React.Component<Props> {
     const CardContainer = styled.div`
       margin-bottom: 3rem;
     `
-
     const TextBlock = styled.div`
       padding: 1rem 1.5rem 1.75rem 1.5rem;
       background-color: white;
     `
-
     const Title = styled.h1`
       color: darkslategrey;
       margin-bottom: 2rem;
@@ -37,6 +38,8 @@ export default class IndexPage extends React.Component<Props> {
     return (
       <Layout>
         <SEO title="Home" />
+        <ButtonConfirm label="OK" />
+        <ButtonCancel label="cancel" />
         <div>{store.example.testMessage}</div>
         <div>{store.ui.example.testMessage}</div>
         <Title>Template Start</Title>
